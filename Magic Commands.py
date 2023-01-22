@@ -20,4 +20,32 @@ print('Hello')
 
 # COMMAND ----------
 
+# MAGIC %md 
+# MAGIC ### below is the demo based upon dbutils
+
+# COMMAND ----------
+
+dbutils.help()
+
+# COMMAND ----------
+
+dbutils.fs.help
+
+# COMMAND ----------
+
+## listing directory
+dbutils.fs.ls('/')
+
+# COMMAND ----------
+
+## listing a particular directory
+dbutils.fs.ls('dbfs:/FileStore/')
+
+# COMMAND ----------
+
+# MAGIC %fs
+# MAGIC ls
+
+# COMMAND ----------
+
 
