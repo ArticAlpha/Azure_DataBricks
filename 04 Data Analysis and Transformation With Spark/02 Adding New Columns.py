@@ -42,4 +42,22 @@ countries.withColumn('Population_in_Millions',countries['POPULATION']/1000000).d
 
 # COMMAND ----------
 
+## concatenationg the country code and iso alpha code using the functions concat and lit
+from pyspark.sql.functions import concat
+countries.withColumn('New_column',concat(col('country_code'),lit('-'),col('iso_alpha2'))).display()
 
+
+# COMMAND ---------
+
+## using upper function to capitalize the name column
+from pyspark.sql.functions import upper
+
+countries.withColumn("NAME_CAPITALIZED", upper(countries["NAME"])).display()
+
+
+# COMMAND ----------
+
+## adding another column call population density and using the round function
+from pyspark.sql.functions import round
+
+countries.withColumn('Population_Density',round(countries['Population']/countries['AREA_KM2'],2)).display()
